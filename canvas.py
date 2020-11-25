@@ -79,3 +79,16 @@ def toppings():
 
 
     return tops
+
+def msjBuild(size: str , tops: List):
+    if(len(tops) == 0):
+        baseStr = "\nUsted Selecciono una Pizza " + size + " Margarita."
+    else:
+        baseStr = "\nUsted Selecciono una Pizza " + size + " Con "
+        for i in range(0 , len(tops)):
+            if(i == len(tops) - 1):
+                baseStr += ' ' + tops[i] + '.'
+            else:
+                baseStr += ' ' + tops[i] + ','
+
+    print(baseStr)
