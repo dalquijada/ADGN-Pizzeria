@@ -32,3 +32,50 @@ def sizes():
     elif(str.lower(selected) == 'g'):
         print('Tamaño Seleccionado: Grande')
         return 'Grande'
+
+def toppings():
+    allowed = ['ja' , 'ch' , 'pi' , 'dq' , 'ac' , 'pp' , 'sa']
+
+    ing = {
+        'ja' : 'Jamon' ,
+        'ch' : 'Champiñones' ,
+        'pi' : 'Pimentones' ,
+        'dq' : 'Doble Queso' ,
+        'ac' : 'Aceitunas' ,
+        'pp' : 'Pepperoni' ,
+        'sa' : 'Salchichon'
+    }
+
+    tops = []
+    ready = False
+
+    print('\n Ingredientes Disponibles: \n')
+
+    print(
+        ' --> Jamon        (ja)\n' ,
+        '--> Champiñones  (ch)\n' ,
+        '--> Pimenton     (pi)\n' ,
+        '--> Doble Queso  (dq)\n' ,
+        '--> Aceitunas    (ac)\n' ,
+        '--> Pepperoni    (pp)\n' ,
+        '--> Salchichon   (sa)\n'
+    )
+
+    while(not ready):
+
+        selected = input('Seleccione ingredientes a agregar(ENTER para terminar): ')
+
+        if(selected in ing.keys()):
+            if(ing[selected] not in tops ):
+                tops.append(ing[selected])
+            else:
+                print('\n El ingrediente ya se encuentra seleccionado !\n')
+        elif(len(selected) == 0):
+            ready = True
+            break
+        else:
+            print('\nIngrediente invalido... \n')
+
+
+
+    return tops
